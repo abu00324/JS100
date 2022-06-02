@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //n までの和
+        {
+
+            function getSum(n) {
+                let ary = [0]
+                for (let i = 0; i < n; i++) {
+                    ary.push(n - i)
+                }
+                // console.log(ary)
+                return ary.reduce((sum, num) => { return sum + num }, 0)
+            }
+
+            console.log(getSum(10)); // 55
+            console.log(getSum(99)); // 4950
+        }
+        //数字の桁数
+        {
+
+            function getNumberOfDigits(n) {
+                return String(n).length;
+            }
+
+            console.log(getNumberOfDigits(100)); // 3
+            console.log(getNumberOfDigits(114514)); // 6
+        }
+
+        //サイコロの裏目
+        {
+            function getBackSide(n) {
+                return 7 - n;
+            }
+
+            console.log(getBackSide(1)); // 6
+            console.log(getBackSide(3)); // 4
+
+        }
+        //単位の変換
+
+        {
+            function convertToSeconds(n) {
+                return 60 * n;
+            }
+
+            console.log(convertToSeconds(16)); // 960
+            console.log(convertToSeconds(3)); // 180
+
+        }
+
+        //充電時間
+        {
+            function getTimeUntilFull(n) {
+                return 100 - n;
+            }
+
+            console.log(getTimeUntilFull(70)); // 30
+            console.log(getTimeUntilFull(25)); // 75
+        }
+        //頭文字
+        {
+            function getInitialFromName(s) {
+                // let str = s;
+                // let a = str.slice(0, 1);
+                // let b = str.slice(0, 1);
+                // return a;
+                s = s.split(' ')
+                return `${s[0].charAt(0)}.${s[1].charAt(0)}`
+
+            }
+
+
+            console.log(getInitialFromName("Dio Brando")); // D.B
+            console.log(getInitialFromName("Pannacotta Fugo")); // P.F
+            console.log(getInitialFromName("Gyro Zeppeli")); // G.Z
+        }
+        //どれにしようかな
+        {
+            function choiceOfGod(n) {
+                const ans = 21 % n;
+                if (ans == 0) {
+                    return n;
+                } else { console.log(ans); }
+            }
+
+            console.log(choiceOfGod(4)); // 1
+            console.log(choiceOfGod(3)); // 3
+        }
+        //@
+        {
+            function convertAtToAtMark(s) {
+                return s.replaceAll('at', "@")
+
+            }
+
+            console.log(convertAtToAtMark("gsatcodeatquantity")); // gs@code@quantity
+            console.log(convertAtToAtMark("atatatjojoatatat")); // @@@jojo@@@
+        }
+        //花粉症
+        {
+
+            function getNeedBox(m, n) {
+                return Math.ceil(n / m);
+            }
+
+            console.log(getNeedBox(7, 30)); // 5
+            console.log(getNeedBox(3, 100)); // 34
+            console.log(getNeedBox(7, 5)); // 1
+        }
+
+    </script>
+
+</body>
+
+</html>

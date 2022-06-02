@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //カウントダウン
+
+        {
+            function countDown(n) {
+                let count = ""
+
+                for (let i = 0; i < n; i++)
+                    count = count + " " + (n - i)
+                return count
+            }
+
+            console.log(countDown(3)); // 3 2 1
+            console.log(countDown(10)); // 10 9 8 7 6 5 4 3 2 1
+        }
+
+
+        function getOneToN(s, n) {
+
+            return s.substr(0, n)
+
+        }
+
+        console.log(getOneToN("aabbccdd", 5)); // aabbc
+        console.log(getOneToN("gsacademyfukuoka", 9)); // gsacademy
+
+        //文字列の一致
+        {
+
+            function isEqual(s, t) {
+                if (s === t) {
+                    console.log('Yes');
+                } else if (s !== t) {
+                    console.log('No');
+                }
+            }
+
+            console.log(isEqual("gsacademy", "gsacademy")); // Yes
+            console.log(isEqual("JavaScript", "ジャバスク")); // No
+            console.log(isEqual("aaaaa", "aaaaaa")); // No
+        }
+        //A の個数
+        {
+            function getNumberOfA(s) {
+                const Str = "A";
+                const moji = (s.match(new RegExp(Str, "g")) || []).length;
+                console.log(moji);
+            }
+
+            console.log(getNumberOfA("GSACADEMY")); // 2
+            console.log(getNumberOfA("aAaAaA")); // 3
+            console.log(getNumberOfA("JavaScript")); // 0
+        }
+        //表面積の計算
+        {
+            function getSurfaceArea(a) {
+                return a * a * 6;
+            }
+
+            console.log(getSurfaceArea(4)); // 96
+            console.log(getSurfaceArea(1)); // 6
+
+        }
+        //三角形の内角の和
+        {
+
+            function getAngle(a, b) {
+                return 180 - a - b;
+            }
+
+            console.log(getAngle(30, 90)); // 60
+            console.log(getAngle(45, 45)); // 90
+        }
+        //数字の出力
+        {
+            function zeroPadding3(n) {
+                if (n < 5) {
+                    console.log('00' + n);
+                } else if (n > 5) {
+                    console.log('0' + n);
+                }
+            }
+
+            console.log(zeroPadding3(98)); // 098
+            console.log(zeroPadding3(2)); // 002
+        }
+        //一週間の予定
+
+        {
+
+            function getPaidHolidays(s) {
+                const Str = "no";
+                const moji1 = (s.match(new RegExp(Str, "g")) || []).length;
+                console.log(moji1);
+            }
+            console.log(getPaidHolidays("yes yes yes yes no no yes")); // 2
+            console.log(getPaidHolidays("yes no no no no no yes")); // 5
+        }
+
+        // function zeroPadding3(n) {
+    //     if(n<10){
+    //        console.log('00' + n) ;
+
+    //     }else if(n<10<100){
+    //         console.log('0'+n);
+    //     }
+    //  }
+
+    // console.log(zeroPadding3(98)); // 098
+    // console.log(zeroPadding3(2)); // 002
+    </script>
+
+</body>
+
+</html>
